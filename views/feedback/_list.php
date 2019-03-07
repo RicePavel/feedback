@@ -13,7 +13,7 @@ $this->title = 'Отзыв';
 ?>
 
 <div class="feedbackItem">
-    <div><?= Html::encode($model->caption) ?></div>
+    <div><a href="<?= Url::to(['feedback/view', 'feedback_id' => $model->feedback_id]) ?>"><?= Html::encode($model->caption) ?></a></div>
     <div><?= Html::encode($model->description) ?></div>
     <?php if ($model->file) { ?>
         <a href="<?= Url::to(['feedback/get_file', 'file_id' => $model->file->file_id]) ?>">

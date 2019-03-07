@@ -43,14 +43,16 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
             'rules' => [
+                'feedback/all' => 'feedback/all',
+                'feedback' => 'feedback/add',
+                'feedback/<feedback_id:\d+>' => 'feedback/view'
             ],
-        ],
-        */
+        ], 
+         
     ],
     'params' => $params,
     'language' => 'ru'
