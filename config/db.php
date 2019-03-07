@@ -1,10 +1,18 @@
 <?php
 
 return [
+    /*
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=yii2basic',
     'username' => 'root',
     'password' => '',
+    'charset' => 'utf8',
+     */
+    
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=feedback',
+    'username' => 'feedback',
+    'password' => 'VP1t1AoLSgXJP9y3',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
