@@ -12,6 +12,8 @@ use app\models\ContactForm;
 use app\models\FeedbackForm;
 use app\models\ar\Feedback;
 use app\models\ar\Files;
+use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
 
 class FeedbackController extends Controller {
     
@@ -41,7 +43,13 @@ class FeedbackController extends Controller {
     }
     
     public function actionAll() {
-        
+        $dataProvider = new ActiveDataProvider([
+            'query' => Feedback::find(),
+            'pagination' => [
+                'pageSize' => 3
+            ]
+        ]);
+        return $this->render('all', ['dataProvider' => $dataProvider]);
     }
     
 }

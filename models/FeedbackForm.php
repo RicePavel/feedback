@@ -23,6 +23,14 @@ class FeedbackForm extends Model {
         ];
     }
     
+    public function attributeLabels() {
+        return [
+            'caption' => 'Заголовок',
+            'description' => 'Описание',
+            'uploadedFile'  => 'Файл'
+        ];
+    }
+    
     public static $captions = [
         'Отзыв',
         'Технический вопрос',

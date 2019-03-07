@@ -12,19 +12,15 @@ $this->title = 'Отзыв';
 
 ?>
 
-<div>
-    
+<div class="feedbackItem">
     <div><?= Html::encode($model->caption) ?></div>
-    <br/>
     <div><?= Html::encode($model->description) ?></div>
-    <br/>
     <?php if ($model->file) { ?>
-    <a href="<?= Url::to(['feedback/get_file', 'file_id' => $model->file->file_id]) ?>">
-            <?= $model->file->name ?> 
-        <?php if ($model->file->file_size) { ?>
-            (<?= $model->file->file_type ?>, <?= $model->file->file_size_format ?>)
-        <?php } ?>
-    </a>
+        <a href="<?= Url::to(['feedback/get_file', 'file_id' => $model->file->file_id]) ?>">
+                <?= $model->file->name ?> 
+            <?php if ($model->file->file_size) { ?>
+                (<?= $model->file->file_type ?>, <?= $model->file->file_size_format ?>)
+            <?php } ?>
+        </a>
     <?php } ?>
-    
 </div>
