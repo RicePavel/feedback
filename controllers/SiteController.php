@@ -64,6 +64,18 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionTime() {
+        $cache = \Yii::$app->cache;
+        $get = \Yii::$app->request->get();
+        if (\Yii::$app->request->get('flush-cache') !== null) {
+            $cache->delete('time');
+        }  
+        $time = $cache->getOrSet('time', function() {
+            return date('Y-m-d H:i:s');
+        });
+        return $this->render('time', ['time' => $time]);
+    }
+    
     /**
      * Login action.
      *
