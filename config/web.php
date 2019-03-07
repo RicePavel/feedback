@@ -53,6 +53,7 @@ $config = [
         */
     ],
     'params' => $params,
+    'language' => 'ru'
 ];
 
 if (YII_ENV_DEV) {
