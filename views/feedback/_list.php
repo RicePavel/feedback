@@ -23,4 +23,5 @@ $this->title = 'Отзыв';
             <?php } ?>
         </a>
     <?php } ?>
+    <hr/>
 </div>
