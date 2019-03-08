@@ -25,8 +25,8 @@ class FeedbackForm extends Model {
     
     public function attributeLabels() {
         return [
-            'caption' => 'Заголовок',
-            'description' => 'Описание',
+            'caption' => 'Тема',
+            'description' => 'Обращение',
             'uploadedFile'  => 'Файл'
         ];
     }

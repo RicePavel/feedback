@@ -7,6 +7,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' => 'feedback/all',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -49,7 +50,8 @@ $config = [
             'rules' => [
                 'feedback/all' => 'feedback/all',
                 'feedback' => 'feedback/add',
-                'feedback/<feedback_id:\d+>' => 'feedback/view'
+                'feedback/<feedback_id:\d+>' => 'feedback/view',
+                'time' => 'site/time'
             ],
         ], 
          

@@ -14,9 +14,13 @@ $this->title = 'Отзыв';
 
 <div>
     
+    <?php if (\Yii::$app->session->hasFlash('message')) { ?>
+    <div class="alert alert-success" role="alert"><?= \Yii::$app->session->getFlash('message') ?></div>
+    <?php } ?>
+    
     <div><?= Html::encode($model->caption) ?></div>
     <br/>
-    <div><?= Html::encode($model->description) ?></div>
+    <div><?= HtmlPurifier::process($model->description) ?></div>
     <br/>
     <?php if ($model->file) { ?>
     <a href="<?= Url::to(['feedback/get_file', 'file_id' => $model->file->file_id]) ?>">

@@ -25,7 +25,7 @@ class FeedbackController extends Controller {
             $model->uploadedFile = \yii\web\UploadedFile::getInstance($model, 'uploadedFile');
             $ok = $model->insert();
             if ($ok) {
-                \Yii::$app->session->addFlash('message', 'Обращение успешно сохранено');
+                \Yii::$app->session->setFlash('message', 'Обращение успешно сохранено');
                 return $this->redirect(['feedback/view', 'feedback_id' => $model->feedback_id]);
             }
         }
